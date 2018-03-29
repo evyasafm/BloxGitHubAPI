@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Blox Git Hub View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="BloxGitHubViewController" customModule="BloxGitHubAPI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="i4E-SP-5HW">
+                                <rect key="frame" x="0.0" y="20" width="375" height="577"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="2MZ-1I-fKd"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="MJz-nr-ZSC"/>
+                                </connections>
+                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="EL2-rz-dNs">
+                                <rect key="frame" x="0.0" y="597" width="375" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyd-6J-0is">
+                                        <rect key="frame" x="0.0" y="0.0" width="125" height="70"/>
+                                        <state key="normal" title="Create"/>
+                                        <connections>
+                                            <action selector="createRepositoryTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PZ7-n2-uNa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DGV-0t-3r7">
+                                        <rect key="frame" x="125" y="0.0" width="125" height="70"/>
+                                        <state key="normal" title="Edit"/>
+                                        <connections>
+                                            <action selector="editRepositoryTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NsL-jH-uAa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f32-RD-Xhd">
+                                        <rect key="frame" x="250" y="0.0" width="125" height="70"/>
+                                        <state key="normal" title="Delete"/>
+                                        <connections>
+                                            <action selector="deleteRepositoryTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gm0-e3-PBN"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="PP8-E3-miF"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="EL2-rz-dNs" firstAttribute="top" secondItem="i4E-SP-5HW" secondAttribute="bottom" id="Ace-lc-NPK"/>
+                            <constraint firstItem="EL2-rz-dNs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MSE-Ya-r3B"/>
+                            <constraint firstItem="i4E-SP-5HW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XNA-lH-Zt9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EL2-rz-dNs" secondAttribute="trailing" id="Zui-e1-9mZ"/>
+                            <constraint firstItem="EL2-rz-dNs" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="bH5-bY-egH"/>
+                            <constraint firstItem="i4E-SP-5HW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="kMO-C8-p7k"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="i4E-SP-5HW" secondAttribute="trailing" id="xkW-Oo-Byv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="repositoriesTableView" destination="i4E-SP-5HW" id="dQ4-uI-tO0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
