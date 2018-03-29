@@ -23,6 +23,8 @@ class BloxNetworkServiceHandler: BloxNetworkService {
     static let shared: BloxNetworkService = { BloxNetworkServiceHandler() }()
     
     private let provider: MoyaProvider<BloxTargetType>
+    
+    // For simplicity - use credentials in the service class
     private var username: String = "evyasafmtest"
     private var password: String = "Aa123456"
     
