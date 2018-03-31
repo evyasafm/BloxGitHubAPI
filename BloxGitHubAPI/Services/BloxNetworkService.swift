@@ -7,14 +7,15 @@
 //
 
 import Moya
+import Alamofire
 import RxSwift
 
 protocol BloxNetworkService {
     
     func fetchRepositories() -> Observable<[RepositoryModel]>
     func createRepository(name: String) -> Observable<RepositoryModel>
-    func editRepository(name: String, repoId: Int, ownerId: Int) -> Observable<RepositoryModel>
-    func deleteRepository(repoId: Int, ownerId: Int) -> Observable<Bool>
+    func editRepository(name: String, repoName: String, ownerName: String) -> Observable<RepositoryModel>
+    func deleteRepository(repoName: String, ownerName: String) -> Observable<Bool>
     
 }
 
@@ -29,8 +30,10 @@ class BloxNetworkServiceHandler: BloxNetworkService {
     private var password: String = "Aa123456"
     
     private init() {
+        let manager = MoyaProvider<BloxTargetType>.defaultAlamofireManager()
+        manager.session.configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
         provider = MoyaProvider<BloxTargetType>(callbackQueue: DispatchQueue.global(),
-                                              manager: MoyaProvider<BloxTargetType>.defaultAlamofireManager(),
+                                              manager: manager,
                                               plugins: [NetworkLoggerPlugin(verbose: true),
                                                         BasicAuthenticationPlugin(key: "\(username):\(password)")]
         )
@@ -54,17 +57,17 @@ class BloxNetworkServiceHandler: BloxNetworkService {
             .asObservable()
     }
     
-    func editRepository(name: String, repoId: Int, ownerId: Int) -> Observable<RepositoryModel> {
+    func editRepository(name: String, repoName: String, ownerName: String) -> Observable<RepositoryModel> {
         return provider.rx
-            .request(.editRepository(name: name, repoId: repoId, ownerId: ownerId))
+            .request(.editRepository(name: name, repoName: repoName, ownerName: ownerName))
             .filterSuccessfulStatusCodes()
             .map(RepositoryModel.self)
             .asObservable()
     }
     
-    func deleteRepository(repoId: Int, ownerId: Int) -> Observable<Bool> {
+    func deleteRepository(repoName: String, ownerName: String) -> Observable<Bool> {
         return provider.rx
-            .request(.deleteRepository(repoId: repoId, ownerId: ownerId))
+            .request(.deleteRepository(repoName: repoName, ownerName: ownerName))
             .filterSuccessfulStatusCodes()
             .map({ _ in
                 return true

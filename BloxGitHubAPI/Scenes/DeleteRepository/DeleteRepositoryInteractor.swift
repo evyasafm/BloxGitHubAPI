@@ -28,7 +28,7 @@ class DeleteRepositoryInteractorHandler: DeleteRepositoryInteractor {
     
     func deleteRepository(args: DeleteRepositoryModel.Args) {
         bloxNetworkService
-            .deleteRepository(repoId: args.repoId, ownerId: args.ownerId)
+            .deleteRepository(repoName: args.repoName, ownerName: args.ownerName)
             .subscribe(onNext: { (_) in
                 self.presenter.presentRepositoryModelDeleted()
             }, onError: { (error: Error) in

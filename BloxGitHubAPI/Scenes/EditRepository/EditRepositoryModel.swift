@@ -11,9 +11,9 @@ import Foundation
 enum EditRepositoryModel {
     
     struct Args {
-        let repositoryName: String
-        let repoId: Int
-        let ownerId: Int
+        var repositoryName: String
+        let repoName: String
+        let ownerName: String
     }
     
     struct Response {

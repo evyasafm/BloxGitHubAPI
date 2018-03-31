@@ -10,6 +10,7 @@
 		921FB6111843B0E74B169F0B /* Pods_BloxGitHubAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A84B537AFFB47DB34A048437 /* Pods_BloxGitHubAPI.framework */; };
 		A63C3E5B206D5E1E00910440 /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C3E59206D5E1E00910440 /* RepositoryCell.swift */; };
 		A63C3E5C206D5E1E00910440 /* RepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A63C3E5A206D5E1E00910440 /* RepositoryCell.xib */; };
+		A63C3E5E206E0EA100910440 /* OwnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63C3E5D206E0EA100910440 /* OwnerModel.swift */; };
 		A6BECE18206D283C008C6419 /* BloxTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BECE17206D283C008C6419 /* BloxTargetType.swift */; };
 		A6BECE1B206D28DD008C6419 /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BECE1A206D28DD008C6419 /* RepositoryModel.swift */; };
 		A6BECE1D206D2D04008C6419 /* BloxNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BECE1C206D2D04008C6419 /* BloxNetworkService.swift */; };
@@ -44,6 +45,7 @@
 		7541F7B73ECAD11980096119 /* Pods-BloxGitHubAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BloxGitHubAPI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BloxGitHubAPI/Pods-BloxGitHubAPI.debug.xcconfig"; sourceTree = "<group>"; };
 		A63C3E59206D5E1E00910440 /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 		A63C3E5A206D5E1E00910440 /* RepositoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryCell.xib; sourceTree = "<group>"; };
+		A63C3E5D206E0EA100910440 /* OwnerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerModel.swift; sourceTree = "<group>"; };
 		A6BECE17206D283C008C6419 /* BloxTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloxTargetType.swift; sourceTree = "<group>"; };
 		A6BECE1A206D28DD008C6419 /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
 		A6BECE1C206D2D04008C6419 /* BloxNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloxNetworkService.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				A6BECE1A206D28DD008C6419 /* RepositoryModel.swift */,
+				A63C3E5D206E0EA100910440 /* OwnerModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A63C3E5B206D5E1E00910440 /* RepositoryCell.swift in Sources */,
+				A63C3E5E206E0EA100910440 /* OwnerModel.swift in Sources */,
 				A6BECE30206D41C1008C6419 /* Router.swift in Sources */,
 				A6BECE21206D3B57008C6419 /* CreateRepositoryInteractor.swift in Sources */,
 				A6BECE33206D4801008C6419 /* EditRepositoryInteractor.swift in Sources */,

@@ -10,7 +10,8 @@ import Foundation
 
 class RepositoryModel: Decodable {
     
-    var name: String?
-    var id: Int?
+    let name: String
+    let id: Int
+    let owner: OwnerModel
     
 }

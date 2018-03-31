@@ -22,6 +22,8 @@ enum FetchRepositoriesModel {
         struct RepositoryViewModel {
             
             var name: String
+            var editRepositoryArgs: EditRepositoryModel.Args
+            var deleteRepositoryArgs: DeleteRepositoryModel.Args
             
         }
         let repositories: [RepositoryViewModel]

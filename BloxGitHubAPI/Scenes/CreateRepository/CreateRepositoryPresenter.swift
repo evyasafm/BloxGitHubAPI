@@ -20,8 +20,7 @@ class CreateRepositoryPresenterHandler: CreateRepositoryPresenter {
     weak var view: CreateRepositoryView?
     
     func presentRepositoryModel(response: CreateRepositoryModel.Response) {
-        let repositoryName = response.repositoryModel.name ?? "Repository Empty Name"
-        let repositoryVM = CreateRepositoryModel.ViewModel.RepositoryViewModel(name: repositoryName)
+        let repositoryVM = CreateRepositoryModel.ViewModel.RepositoryViewModel(name: response.repositoryModel.name)
         DispatchQueue.main.async {
             self.view?.displayRepositoryCreated(repository: CreateRepositoryModel.ViewModel(repository: repositoryVM))
         }

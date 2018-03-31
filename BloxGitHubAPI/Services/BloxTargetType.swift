@@ -14,8 +14,8 @@ enum BloxTargetType {
     
     case fetchRepositories()
     case createRepository(name: String)
-    case editRepository(name: String, repoId: Int, ownerId: Int)
-    case deleteRepository(repoId: Int, ownerId: Int)
+    case editRepository(name: String, repoName: String, ownerName: String)
+    case deleteRepository(repoName: String, ownerName: String)
 
 }
 
@@ -54,9 +54,9 @@ extension BloxTargetType: TargetType {
         case .fetchRepositories:
             return .requestPlain
         case .createRepository(let name):
-            return .requestParameters(parameters: ["name" : name], encoding: URLEncoding.default)
+            return .requestParameters(parameters: ["name" : name], encoding: JSONEncoding.default)
         case .editRepository(let name,_,_):
-            return .requestParameters(parameters: ["name" : name], encoding: URLEncoding.default)
+            return .requestParameters(parameters: ["name" : name], encoding: JSONEncoding.default)
         case .deleteRepository:
             return .requestPlain
         }

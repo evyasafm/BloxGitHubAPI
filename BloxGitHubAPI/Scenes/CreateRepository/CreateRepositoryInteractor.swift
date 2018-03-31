@@ -11,7 +11,7 @@ import RxSwift
 
 protocol CreateRepositoryInteractor {
     
-    func CreateRepository(args: CreateRepositoryModel.Args)
+    func createRepository(args: CreateRepositoryModel.Args)
     
 }
 
@@ -26,7 +26,7 @@ class CreateRepositoryInteractorHandler: CreateRepositoryInteractor {
         self.bloxNetworkService = bloxNetworkService
     }
     
-    func CreateRepository(args: CreateRepositoryModel.Args) {
+    func createRepository(args: CreateRepositoryModel.Args) {
         bloxNetworkService
             .createRepository(name: args.repositoryName)
             .subscribe(onNext: { (repositoryModel: RepositoryModel) in

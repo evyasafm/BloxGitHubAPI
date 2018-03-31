@@ -28,7 +28,7 @@ class EditRepositoryInteractorHandler: EditRepositoryInteractor {
     
     func editRepository(args: EditRepositoryModel.Args) {
         bloxNetworkService
-            .editRepository(name: args.repositoryName, repoId: args.repoId, ownerId: args.ownerId)
+            .editRepository(name: args.repositoryName, repoName: args.repoName, ownerName: args.ownerName)
             .subscribe(onNext: { (repositoryModel: RepositoryModel) in
                 self.presenter.presentRepositoryModel(response: EditRepositoryModel.Response(repositoryModel: repositoryModel))
             }, onError: { (error: Error) in

@@ -44,15 +44,23 @@ class BloxGitHubViewController: UIViewController {
     // Mark - Actions
     
     @IBAction func createRepositoryTap(_ sender: Any) {
-        createRepositoryInteractor.CreateRepository(args: CreateRepositoryModel.Args(repositoryName: "New Repo"))
+        createRepositoryInteractor.createRepository(args: CreateRepositoryModel.Args(repositoryName: "Created_Repo_\(repositories?.count ?? 0)" ))
     }
     
     @IBAction func editRepositoryTap(_ sender: Any) {
-        editRepositoryInteractor.editRepository(args: EditRepositoryModel.Args(repositoryName: "New Repo", repoId: 1, ownerId: 1))
+        guard let repositories = repositories, repositories.isEmpty == false else {
+            return
+        }
+        var editRepositoryArgs = repositories[0].editRepositoryArgs
+        editRepositoryArgs.repositoryName = "Edit_Repo"
+        editRepositoryInteractor.editRepository(args: editRepositoryArgs)
     }
     
     @IBAction func deleteRepositoryTap(_ sender: Any) {
-        deleteRepositoryInteractor.deleteRepository(args: DeleteRepositoryModel.Args(repoId: 1, ownerId: 1))
+        guard let repositories = repositories, repositories.isEmpty == false else {
+            return
+        }
+        deleteRepositoryInteractor.deleteRepository(args: repositories[0].deleteRepositoryArgs)
     }
 }
 

@@ -12,8 +12,8 @@ import Foundation
 enum DeleteRepositoryModel {
     
     struct Args {
-        let repoId: Int
-        let ownerId: Int
+        let repoName: String
+        let ownerName: String
     }
     
     struct Response {
